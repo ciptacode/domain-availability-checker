@@ -5,7 +5,7 @@
             <p class="text-gray-600 text-center mb-8">Find the perfect domain name for your project</p>
             <form @submit.prevent="checkDomain" class="flex gap-4 mb-6">
                 <input v-model="domain" @input="onInputDomain" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter domain (e.g., example.com)">
-                <button @click="checkDomain" class="bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded-md">Check</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded-md">Check</button>
             </form>
             <div v-if="loading" class="text-center text-gray-500">Checking...</div>
             <div v-if="successCheck && !loading" :class="!error ? 'text-green-500' : 'text-red-500'" class="text-center text-lg">

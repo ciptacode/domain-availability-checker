@@ -8,4 +8,8 @@ export default defineNuxtConfig({
   },
   
   modules: ['@nuxtjs/tailwindcss'],
+
+  runtimeConfig: {
+    rapidapiKey: '',
+  },
 })

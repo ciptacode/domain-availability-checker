@@ -1,6 +1,8 @@
 import {setTimeout} from 'timers/promises'
 
 export default defineEventHandler(async (event) => {
+    const config = useRuntimeConfig()
+
     setTimeout(1000)
 
     const body = await readBody(event)
@@ -22,7 +24,7 @@ export default defineEventHandler(async (event) => {
             method: 'GET',
             headers: {
                 'x-rapidapi-host': 'domainr.p.rapidapi.com',
-                'x-rapidapi-key': 'fce866c0d4mshf5b76ee0ad3c5dap139b6cjsn131cfebf1096'
+                'x-rapidapi-key': config.rapidapiKey || ''
             }
         })
 
@@ -42,9 +44,11 @@ export default defineEventHandler(async (event) => {
             summary: data.status[0].summary
         }
     } catch (error) {
+        console.error(error)
         return {
             status: 500,
-            message: 'Error'
+            message: 'Error',
+            errors: error
         }
     }
 })
