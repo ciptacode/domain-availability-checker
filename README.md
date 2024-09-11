@@ -1,6 +1,6 @@
 # Domain Availability Checker
 
-https://finddomain.ciptacode.com
+https://checkdomain.ciptacode.com
 
 ### run in dev
 ```shell
