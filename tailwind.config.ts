@@ -1,4 +1,5 @@
 module.exports = {
+  serverModuleFormat: 'cjs',
   content: [
     './components/**/*.{vue,js,ts}',
     './layouts/**/*.vue',
